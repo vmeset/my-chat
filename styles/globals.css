@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .customParagraph {
+        @apply p-3 bg-gray-700/50 rounded-xl max-w-[300px]
+    }
+}
