@@ -14,7 +14,6 @@ function NewChat() {
   const createNewChat = async () => {
     const doc = await addDoc(
       collection(db, "users", session?.user?.email!, "chats"), {
-        messages: [],
         userId: session?.user?.email!,
         createdAt: serverTimestamp()
       }
@@ -23,8 +22,7 @@ function NewChat() {
   }
 
   return (
-    <div onClick={createNewChat}
-    className="flex items-center m-2 space-x-1 customParagraph cursor-pointer hover:bg-gray-700/70 transition-all duration-300 ease-in-out text-white hover:text-yellow-100 overflow-y-auto">
+    <div onClick={createNewChat} className="chat">
         <PlusIcon className="w-4 h-4" />
         <p>
             Новый чат
