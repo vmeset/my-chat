@@ -1,12 +1,20 @@
-'use client'
+import Chat from "../../../components/Chat"
+import ChatInput from "../../../components/ChatInput"
 
-import { usePathname } from "next/navigation"
+interface ChatPageProps {
+  params: {
+    id: string
+  }
+}
 
-function ChatPage() {
-  const pathname = usePathname()
-
+function ChatPage({params: {id}}: ChatPageProps) {
+  
   return (
-    <div>ChatPage with id: {pathname?.split('/')[2]}</div>
+    <div className="flex flex-col  h-screen overflow-hidden">
+      ChatPage with id: {id}
+      <Chat chatId={id} />
+      <ChatInput chatId={id} />
+    </div>
   )
 }
 

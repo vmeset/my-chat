@@ -17,9 +17,6 @@ function SideBar() {
       orderBy("createdAt", "asc")
     )
   )
-
-  console.log(session?.user);
-  
   
   return (
     <div className="bg-[#202123] p-2 h-screen max-w-xs md:min-w-[20rem] flex flex-col">
