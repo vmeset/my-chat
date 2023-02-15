@@ -1,7 +1,7 @@
 import Chat from "../../../components/Chat"
 import ChatInput from "../../../components/ChatInput"
 
-interface ChatPageProps {
+type ChatPageProps = {
   params: {
     id: string
   }
@@ -10,7 +10,7 @@ interface ChatPageProps {
 function ChatPage({params: {id}}: ChatPageProps) {
   
   return (
-    <div className="flex flex-col  h-screen overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden">
       ChatPage with id: {id}
       <Chat chatId={id} />
       <ChatInput chatId={id} />

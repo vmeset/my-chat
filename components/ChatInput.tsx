@@ -7,7 +7,7 @@ import { FormEvent, useState } from "react"
 import { toast } from "react-hot-toast"
 import { db } from "../firebase"
 
-interface ChatInputProps {
+type ChatInputProps = {
   chatId: string
 }
 
@@ -43,7 +43,7 @@ function ChatInput({chatId}: ChatInputProps) {
 
     const notification = toast.loading('Думаю...')
 
-    await fetch('/api/askQuestion', {
+    await fetch('/api/askQuest', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
