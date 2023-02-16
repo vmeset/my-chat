@@ -35,7 +35,9 @@ function ChatRow({id}: ChatRowProps) {
   return (
     <Link href={`/chat/${id}`} className={pathname?.split('/')[2] == id ? 'activeRow chat' : 'chat'} >
         <ChatBubbleLeftIcon className="w-6 h-6 text-gray-600 hover:text-black" />
-        <p className="flex-1 hidden md:inline-flex truncate">{id}</p>
+        <p className="flex-1 hidden md:inline-flex truncate">
+          {messages?.docs[messages?.docs.length - 1]?.data().text || 'новый чатик'}
+        </p>
         <TrashIcon onClick={removeChat} className="w-6 h-6 text-gray-600 hover:text-red-600" />
     </Link>
   )

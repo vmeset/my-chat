@@ -5,11 +5,10 @@ type MessageProps = {
 }
 
 function Message({message}: MessageProps) {
-
-  console.log(message.user)
+  const isChatGPT = message.user.name === "ChatGPT"
 
   return (
-    <div>
+    <div className={`py-5 text-white ${isChatGPT && "bg-[#434654]"}`}>
       <div className="flex space-x-5 px-10 max-w-2xl mx-auto">
         <img src={message.user.avatar || '/no_image.png'} alt="" className="w-8 h-8" />
         <p className="pt-1 text-sm">{message.text}</p>
